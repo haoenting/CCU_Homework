@@ -1,0 +1,82 @@
+a. Use a sentinel-controlled loop to read 10 positive numbers. 
+Compute and display their sum.
+| Location | Number  | Inetrucion            |
+| -------- | ------- | --------------------- |
+| 00       | +1008   | Read A                |
+| 01       | +2008   | Load A                |
+| 02       | +4106   | Branch negative to 06 |
+| 03       | +3009   | Add B                 |
+| 04       | +2109   | Store C               | 
+| 05       | +4000   | Branch to 00          |
+| 06       | +1109   | Write B               |
+| 07       | +4300   | Halt                  |
+| 08       | +0000   | Variable A            |
+| 09       | +0000   | Variable B            | 
+| 10       | -99999  | END                   |
+
+1. Read number to A.
+2. Load A.
+3. If A is negative, means it's the end of numbers.
+4. Add and store A to B.
+5. Back to 00.
+
+b. Use a counter-controlled loop to read 7 numbers, some positive and some negative, 
+and compute and display their average.
+| Location |  Number | Inetrucion        |
+| -------- | ------- | ----------        |
+| 00       | +1018   | Read A            |
+| 01       | +2018   | Load A            |
+| 02       | +3017   | Add B             |
+| 03       | +2117   | Store C           |
+| 04       | +2016   | Load Counter      | 
+| 05       | +3115   | Subtract 1        | 
+| 06       | +2116   | Store Counter     |
+| 07       | +4209   | Branch zero to 09 |
+| 08       | +4000   | Branch to 00      |
+| 09       | +2017   | Load B            |
+| 10       | +3214   | Divide 7          |
+| 11       | +2117   | Store D           |
+| 12       | +1117   | Write D           |
+| 13       | +4300   | Halt              |
+| 14       | +0007   | Variable 7        |
+| 15       | +0001   | Variable 1        |
+| 16       | +0007   | Variable Counter  |
+| 17       | +0000   | Variable B        |
+| 18       | +0000   | Variable A        |
+| 19       | -99999  | END               |
+
+1. Add the number to 17.
+3. Subtract Counter by 15.
+4. If the Counter is 0, compute and display the average.
+
+c. Read a series of numbers, and determine and display the largest number.
+The first number read indicates how many numbers should be process.
+| Location |  Number | Inetrucion             |
+| -------- | ------- | ---------------------- |
+| 00       | +1018   | Read A                 |
+| 01       | +2018   | Load A                 |            
+| 02       | +3115   | Subtract 1             |
+| 03       | +4113   | Branch negative to 13  |
+| 04       | +2118   | Store A                | 
+| 05       | +1017   | Read B                 | 
+| 06       | +2016   | Load C                 |
+| 07       | +3117   | Subtract B             |
+| 08       | +4110   |  Branch negative to 10 |
+| 09       | +4001   | Branch to 01           |
+| 10       | +2017   | Load B                 |
+| 11       | +2116   | Store B                |
+| 12       | +4002   | Branch to 02           |
+| 13       | +1116   | Write C                |
+| 14       | +4300   | Halt                   |
+| 15       | +0001   | Variable 1             |
+| 16       | +0000   | Variable C             |
+| 17       | +0000   | Variable B             |
+| 18       | +0000   | Variable A             | 
+| 19       | -99999  | END                    |
+
+1. Read the total numbers.
+2. Subtract total numbers by 17.
+3. If the total numbers is negative, display the largest number
+4. Read the next number.
+5. Compare the number with the previous
+6. Back to Subtract total numbers.
